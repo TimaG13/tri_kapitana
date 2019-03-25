@@ -1,6 +1,24 @@
+//fonts
+@font-face {
+  font-family: 'Mukta';
+  src: url('font/Mukta/Mukta-ExtraLight.woff2') format('woff2'),
+  url('font/Mukta/Mukta-ExtraLight.woff') format('woff'),
+  url('font/Mukta/Mukta-ExtraLight.ttf') format('truetype');
+  font-weight: 200;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Mukta-Bold';
+  src: url('font/Mukta/Mukta-Bold.woff2') format('woff2'),
+  url('font/Mukta/Mukta-Bold.woff') format('woff'),
+  url('font/Mukta/Mukta-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
 //menu
 body{
-  font-size: 18px;
+  font: 18px 'Mukta',sans-serif;
 }
 .top_mnu {
   position: absolute;
@@ -53,3 +71,73 @@ body{
   }
 }
 //button effect
+.container{
+
+  a.btn{
+
+    .wrap-btn{
+      position: relative;
+      display: flex;
+      align-items: center;
+      width: 250px;
+      border-radius: 25px;
+      overflow: hidden;
+      &:after{
+        position: absolute;
+        content: "";
+        z-index: -1;
+        width: 50px;
+        height: 100%;
+        background: #4d12f9;
+        transition: all .5s ease-in-out;
+        opacity: 0;
+      }
+
+      .wrap-icon{
+        position: relative;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        border-radius: 50%;
+        align-items: center;
+        justify-content: center;
+        background: #4d12f9;
+
+        i.fa{
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          width: 15px;
+          height: 15px;
+          margin: 3px -6px;
+          border-top: 0.125rem solid #fff;
+          border-right: 0.125rem solid #fff;
+          transform: rotate(45deg) translate(-50%,-50%);
+          transition: all .4s;
+          &:before{
+            content: "";
+            position: absolute;
+            width: 25px;
+            margin: -2px 0px 0px -5px;
+            height: 0.125rem;
+            background: #ffffff;
+            transform: rotate(-45deg);
+          }
+        }
+      }
+      .icon-arrow{
+        position: absolute;
+        right: 10px;
+        color: #ffffff;
+        font: bold 20px 'Mukta-Bold';
+      }
+    }
+    &:hover .wrap-btn:after{
+      width: 100%;
+      opacity: 1;
+    }
+    &:hover .wrap-icon i.fa{
+      margin: 3px -6px 3px 8px;
+    }
+  }
+}
