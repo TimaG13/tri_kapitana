@@ -1,0 +1,55 @@
+//menu
+body{
+  font-size: 18px;
+}
+.top_mnu {
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 999;
+
+  &.hied {
+    transition: 1s ease-in-out;
+    opacity: 0;
+    overflow: hidden;
+  }
+  &.fixed {
+    transition: all .4s ease-in;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #ffffff;
+  }
+}
+
+.header {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: url("../img/photo_2019-03-22_13-46-04.jpg") no-repeat;
+  background-size: cover;
+  &:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(98, 9, 223, 0.4);
+  }
+  section{
+    z-index: 1;
+    h1{
+      width: 450px;
+      font-size: 60px;
+      color: #dee8ee;
+    }
+    p{
+      color: #ffffff;
+    }
+    a{
+
+    }
+  }
+}
+//button effect
