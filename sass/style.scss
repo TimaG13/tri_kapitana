@@ -45,7 +45,86 @@ nav.navbar{
     font-weight: bolder;
   }
 }
-//menu
+.wrap-logo{
+
+  h1{
+    position: relative;
+    font-size: 30px;
+    vertical-align: middle;
+    font-weight: bolder;
+    white-space: nowrap;
+    overflow: hidden;
+    color: transparent;
+    background: linear-gradient(to right, #b8b8b8, #c5c5c5, #bcbcbc, #c0c0c0,#A1A1A1);
+    filter: barn(5px);
+    background-clip: text;
+    animation: animate-logo 30s linear infinite;
+  }
+}
+////////////
+@-webkit-keyframes animate-logo {
+  0% {
+    background-position: 0 3200px;
+  }
+  100% {
+    background-position: 3200px 0;
+  }
+}
+/////////
+.wrapper_link{
+  .link{
+    color: #ccc;
+    position: relative;
+
+    i{
+      vertical-align: -1px;
+      animation:trembling .3s infinite;
+      opacity: 0;
+      transition: ease-in .3s;
+      transform: scale(.5);
+      perspective: 500px;
+    }
+    &:hover i{
+      opacity: 1;
+      transform: scale(1);
+    }
+    &:before{
+      content: "";
+      position: absolute;
+      bottom: 5px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: #ccc;
+      transition: ease-in .4s;
+    }
+    &:hover:before{
+      width: 100%;
+    }
+    &:hover{
+      text-decoration: none;
+    }
+  }
+}
+//effect tel anim
+@keyframes trembling {
+  0%{
+    transform: rotate(5deg);
+  }
+  25%{
+    transform: rotate(-5deg);
+  }
+  50%{
+     transform: rotate(5deg);
+   }
+  75%{
+    transform: rotate(-5deg);
+  }
+  100%{
+    transform: rotate(5deg);
+  }
+}
+  //menu
 .top_mnu {
   position: absolute;
   left: 0;
@@ -70,6 +149,7 @@ nav.navbar{
   position: relative;
   width: 100%;
   height: 100vh;
+  padding-top: 70px;
   background: url("../img/photo_2019-03-22_13-46-04.jpg") no-repeat;
   background-size: cover;
   &:after {
@@ -83,13 +163,15 @@ nav.navbar{
   }
   section{
     z-index: 1;
-    h1{
-      width: 450px;
-      font-size: 60px;
-      color: #dee8ee;
-    }
-    p{
-      color: #ffffff;
+    .content{
+      max-width: 450px;
+      h1{
+        font-size: 60px;
+        color: #dee8ee;
+      }
+      p{
+        color: #ffffff;
+      }
     }
   }
 }
